@@ -41,7 +41,7 @@ Do not place any replica on a node which has the overseer role. Note that the ro
 ```
 
 
-###Steps:
+### Steps:
 1. Split all collections in the cluster, based on no of docs
 2. Add replicas to all collection in the cluster, based on load expected
 3. Based on indexing load on nodes, make a note of heap value and load avg
@@ -55,30 +55,6 @@ Do not place any replica on a node which has the overseer role. Note that the ro
             - place replicas on free disks
             - limit cores per nodes (differs with node quality)
 5. Execute cluster suggestions to rebalance the cluster    
-
-
-    
-
-
-
-
-
-
-curl http://localhost:8983/api/cluster/autoscaling -H 'Content-type:application/json' -d '{
-"set-cluster-policy": [
-  {"replica": "0", "node": "172.18.0.2:8983_solr"}
-  ]
-}'
-
-
-
-
-
-
-
-
-
-
 
 
 

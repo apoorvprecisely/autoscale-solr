@@ -48,15 +48,6 @@ curl http://localhost:8983/api/cluster/autoscaling -H 'Content-type:application/
 	}'
 
 
-
-
-
-
-
-
-
-
-
 #### Tools
 `curl localhost:8983/api/cluster/autoscaling`
 `curl "localhost:8983/api/cluster/autoscaling/diagnostics"`
