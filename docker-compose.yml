@@ -1,0 +1,71 @@
+version: "3.2"
+
+services:
+ solr1:
+  image: solr:7.1
+  ports:
+   - "8981:8983"
+  links:
+  - zook1
+  command: "/opt/solr/bin/solr -c -z zook1:2181 -f -Dhost=solr1"
+  volumes:
+        - ./solr1:/opt/solr
+  depends_on:
+  - zook1
+ solr2:
+    image: solr:7.1
+    ports:
+     - "8982:8983"
+    links:
+    - zook1
+    command: "/opt/solr/bin/solr -c -z zook1:2181 -f -Dhost=solr2"
+    volumes:
+          - ./solr2:/opt/solr
+    depends_on:
+    - zook1
+ solr3:
+    image: solr:7.1
+    ports:
+     - "8983:8983"
+    links:
+    - zook1
+    command: "/opt/solr/bin/solr -c -z zook1:2181 -f -Dhost=solr3"
+    volumes:
+          - ./solr3:/opt/solr
+    depends_on:
+    - zook1
+ solr4:
+    image: solr:7.1
+    ports:
+     - "8984:8983"
+    links:
+    - zook1
+    command: "/opt/solr/bin/solr -c -z zook1:2181 -f -Dhost=solr4"
+    volumes:
+          - ./solr4:/opt/solr
+    depends_on:
+    - zook1
+ solr5:
+    image: solr:7.1
+    ports:
+     - "8985:8983"
+    links:
+    - zook1
+    command: "/opt/solr/bin/solr -c -z zook1:2181 -f -Dhost=solr5"
+    volumes:
+          - ./solr5:/opt/solr
+    depends_on:
+    - zook1
+ solr6:
+    image: solr:7.1
+    ports:
+     - "8986:8983"
+    links:
+    - zook1
+    command: "/opt/solr/bin/solr -c -z zook1:2181 -f -Dhost=solr6"
+    volumes:
+          - ./solr6:/opt/solr
+    depends_on:
+    - zook1
+ zook1:
+   image: jplock/zookeeper:3.4.10
