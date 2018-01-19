@@ -20,7 +20,7 @@
 ### Trial 2 : Same node Same shard, replica limit
 
 
-### Trial 3 : Overseer node shouldn't have any cores
+### Trial 3 : Overseer node should not have any cores
 
 - `curl "localhost:8983/solr/admin/collections?action=ADDROLE&role=overseer&node=solr6:8983_solr"`
 
