@@ -6,13 +6,13 @@
 ### Trial 1 : Per node core limit
 - 6 machines 10 collections
 - set <10 per node policy
-	```
+```
 	curl http://localhost:8983/api/cluster/autoscaling -H 'Content-type:application/json' -d '{
 	"set-cluster-policy": [
   	{"cores": "<7", "node": "#ANY"}
   	]
 	}'
-	```
+```
 
 - `curl http://localhost:8983/api/cluster/autoscaling/suggestions`
 - Execute Suggestions from admin panel
@@ -33,21 +33,13 @@ curl http://localhost:8983/api/cluster/autoscaling -H 'Content-type:application/
 	}'
 ```
 
-- Execute Suggestions from admin panel
+ - Execute Suggestions from admin panel
 
 
 ### Trial 4 : Storage
-	Not possible
-### Trial 5 : CPU
-	`curl http://localhost:8983/solr/admin/metrics\?wt\=json | jq .metrics | grep systemLoadAverage`
 
-	```
-	curl http://localhost:8983/api/cluster/autoscaling -H 'Content-type:application/json' -d '{
-	"set-cluster-preferences": [
-  	{"minimize" : "sysLoadAvg"}
-  	]
-	}'
-	```
+### Trial 5 : CPU
+
 
 #### Resetting cluster policy
 	curl http://localhost:8983/api/cluster/autoscaling -H 'Content-type:application/json' -d '{
